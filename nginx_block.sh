@@ -17,7 +17,12 @@ sleep 5
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt update    
 # Install Certbot's Nginx package
-sudo apt install python3-certbot-nginx
+
+#works on 18.04LTS
+sudo apt install python-certbot-nginx
+
+#works on 20.04LTS
+#sudo apt install python3-certbot-nginx
 
 sleep 5
 . fireset.sh
@@ -77,7 +82,10 @@ echo "${_YELLOW} websocket framework is ready for use.${_RESET}"
 echo "${_MAGENTA}Installation Progress....setup for NGINX block :: completed${_RESET}"
 sleep 5
 # Get Let's Encrypt certificate for example.com
-#sudo certbot --nginx -d $_domain
-sudo certbot certonly --standalone --preferred-challenges http -d $_domain
+#works on 18.04LTS
+sudo certbot --nginx -d $_domain
+#does not works on 20.04LTS
+#sudo certbot certonly --standalone --preferred-challenges http -d $_domain
+sudo ufw allow 443
 . websock.sh 
 sleep 5
