@@ -30,12 +30,12 @@ fi
 echo "${_CYAN}Installation Progress....${_RESET}"
 
 # Adding privilage to setup files
+chmod +x $HOME/websocket-automation/nginx.sh
 chmod +x $HOME/websocket-automation/fireset.sh
+chmod +x $HOME/websocket-automation/nginx_block.sh
+chmod +x $HOME/websocket-automation/websock.sh
 
-git clone https://github.com/hanifr/Nginx-Server-Blocks.git
-cd
-cd Nginx-Server-Blocks/
-. init.sh 
+. nginx.sh 
 sleep 5
-cd
-git clone https://github.com/hanifr/Cloud-Computing-Setup.git
+echo "${_YELLOW}To setup websocket framework please \"./nginx_block.sh\".${_RESET}"
+echo
