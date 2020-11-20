@@ -32,7 +32,7 @@ echo
 # preparing script background work and work under reboot
 echo "[*] Creating mosquitto systemd service"
 
-sudo cat >/etc/mosquitto/conf.d/custom.conf <<EOL
+cat >/tmp/custom.conf <<EOL
 allow_anonymous true
 #password_file /etc/mosquitto/passwd
 
@@ -49,6 +49,7 @@ certfile /etc/letsencrypt/live/$_domain/cert.pem
 cafile /etc/letsencrypt/live/$_domain/chain.pem
 keyfile /etc/letsencrypt/live/$_domain/privkey.pem
 EOL
+sudo mv /tmp/custom.conf /etc/mosquitto/conf.d/custom.conf
 chmod +x $HOME/websocket-automation/mosq_back.sh
 . mosq_back.sh
 echo "${_CYAN}Now MQTT Mosquitto will be according to your domain name $_domain${_RESET}"

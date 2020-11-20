@@ -48,7 +48,7 @@ EOL
 
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/$_domain
 
-sudo cat >/etc/nginx/sites-available/$_domain <<EOL
+cat >/tmp/$_domain <<EOL
 server {
         listen 80;
         listen [::]:80;
@@ -63,7 +63,8 @@ server {
         }
 }
 EOL
-
+sudo mv /tmp/$_domain /etc/nginx/sites-available/$_domain
+sudo ln -s /etc/nginx/sites-available/$_domain /etc/nginx/sites-enabled/
 sudo nginx -t
 grep -R default_server /etc/nginx/sites-enabled/
 sudo rm -rf /etc/nginx/sites-enabled/default 

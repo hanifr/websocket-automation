@@ -34,7 +34,6 @@ chmod +x $HOME/websocket-automation/nginx.sh
 chmod +x $HOME/websocket-automation/fireset.sh
 chmod +x $HOME/websocket-automation/nginx_block.sh
 chmod +x $HOME/websocket-automation/websock.sh
-
 . nginx.sh 
 sleep 5
 echo "${_YELLOW}To setup websocket framework please \"./nginx_block.sh\".${_RESET}"
