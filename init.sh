@@ -30,6 +30,7 @@ fi
 echo "${_CYAN}Installation Progress....${_RESET}"
 
 # Adding privilage to setup files
+chmod +x $HOME/websocket-automation/fireset.sh
 
 git clone https://github.com/hanifr/Nginx-Server-Blocks.git
 cd
