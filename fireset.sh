@@ -16,7 +16,6 @@ echo
 sudo ufw enable
 sudo ufw allow OpenSSH
 sudo ufw allow 80
-sudo ufw allow 443
 # Allow Nginx HTTP Configuration
 sudo sudo ufw allow 'Nginx HTTP'
 sudo ufw allow 1883
