@@ -11,7 +11,7 @@ _RESET=`tput sgr0`
 echo "${_MAGENTA}Installation Progress....Nginx :: Started${_RESET}"
 sudo apt update
 sudo apt install nginx
-sudo ufw allow 'Nginx HTTP'
+#sudo ufw allow 'Nginx HTTP'
 sudo systemctl reload nginx
 sudo systemctl enable nginx
 sleep 5
