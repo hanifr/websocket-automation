@@ -74,8 +74,9 @@ sudo nginx -t
 grep -R default_server /etc/nginx/sites-enabled/
 sudo rm -rf /etc/nginx/sites-enabled/default 
 sudo nginx -t
-sudo systemctl status nginx
-
+# sudo systemctl status nginx
+sudo ufw allow 'Nginx Full'
+sudo ufw delete allow 'Nginx HTTP'
 echo "${_YELLOW}Now the Nginx block is enabled.${_RESET}"
 echo
 echo "${_YELLOW} websocket framework is ready for use.${_RESET}"
