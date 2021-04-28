@@ -13,6 +13,9 @@ echo "${_CYAN}Installation Progress....MQTT Mosquitto :: started${_RESET}"
 echo
 
 # Installation of MQTT Mosquitto dependencies
+sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+sudo apt update
+sudo apt-get install acl
 sudo apt install mosquitto mosquitto-clients
 sleep 5
 systemctl restart mosquitto

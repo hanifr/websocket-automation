@@ -19,10 +19,10 @@ sudo apt update
 # Install Certbot's Nginx package
 
 #works on 18.04LTS
-#sudo apt install python-certbot-nginx
+sudo apt install python-certbot-nginx
 
 #works on 20.04LTS
-sudo apt install python3-certbot-nginx
+#sudo apt install python3-certbot-nginx
 
 sleep 5
 . fireset.sh
